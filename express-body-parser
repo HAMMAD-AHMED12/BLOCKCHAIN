@@ -1,0 +1,18 @@
+
+const express = require ("express")
+const app = express()
+const bodyParser =require("body-Parser")
+const port = 3500
+app.use(bodyParser.json())
+app.get("/",(req,res)=>{
+    res.send("welcome")
+})
+app.get("/peace",(req,res) => {
+    res.send("hello")
+})
+app.post("/send-document",(req,res) => {
+    res.send(req.body)
+})
+app.listen(port, () => {
+    console.log(`server is running at ${port}`)
+})
